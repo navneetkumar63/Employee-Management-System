@@ -9,7 +9,7 @@ dotenv.config();
 const userRegister = async () =>{
     connectToDatabase();
     try{
-        const hashPassword = await bcrypt.hash('admin',10);
+        const hashPassword = await bcrypt.hash('adm',10);
   const newUser = new User({
     name:"Adm",
     email:'adm.com',
