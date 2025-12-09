@@ -9,6 +9,7 @@ import leaveRouter from './routes/leave.js'
 import settingRouter from './routes/setting.js'
 import dashboardRouter from './routes/dashboard.js'
 import fixRoutes from "./routes/fixRoutes.js";
+import Attendance from "./routes/attendance.js"
 
 
 connecttoDatabse();
@@ -26,6 +27,7 @@ app.use('/api/leave', leaveRouter)
 app.use('/api/setting',settingRouter)
 app.use('/api/dashboard',dashboardRouter)
 app.use("/api", fixRoutes);
+app.use('/api/attendance',Attendance)
 
 
 app.listen(process.env.PORT,()=>{

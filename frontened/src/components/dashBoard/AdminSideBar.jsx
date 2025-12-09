@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { FaTachometerAlt,FaUser,FaBuilding, FaCalendarAlt, FaMoneyBillWave, FaCogs } from 'react-icons/fa';
-
+import { FaTachometerAlt,FaUser,FaBuilding, FaCalendarAlt, FaMoneyBillWave, FaCogs,  FaRegCalendarAlt } from 'react-icons/fa';
+import{ AiOutlineFileText} from 'react-icons/ai'
 const AdminSideBar = () => {
   return (
     <div className='bg-gray-800 text-white h-screen fixed left-0 top-0 bottom-0 space-y-2 w-64'>
@@ -45,7 +45,28 @@ className={({isActive}) => `${isActive ? "bg-teal-500 " :" "} flex items-center 
 </NavLink>
 
 
-<NavLink to ="/admin-dashboard/setting"
+
+
+<NavLink to ="/admin-dashboard/attendance"
+className={({isActive}) => `${isActive ? "bg-teal-500 " :" "} flex items-center space-x-2 py-2 px-4  rounded`} end>
+    <FaRegCalendarAlt/>
+    <span>Attendence</span>
+</NavLink>
+
+ <NavLink
+          to="/admin-dashboard/attendance-report"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-teal-500" : ""
+            } flex items-center space-x-4 py-2.5 px-4 rounded`
+          } end
+        >
+          <AiOutlineFileText/>
+      <span>Attendance Report</span>
+        </NavLink>
+
+
+        <NavLink to ="/admin-dashboard/setting"
 className={({isActive}) => `${isActive ? "bg-teal-500 " :" "} flex items-center space-x-2 py-2 px-4  rounded`} end>
     <FaCogs />
     <span>Setting</span>
