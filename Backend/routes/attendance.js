@@ -2,7 +2,8 @@ import express from "express";
 import { defaultAttendance } from "../middleware/defaultAttendance.js";
 
 import authMiddleware from "../middleware/authMiddleware.js";
-import { attendanceReport, getAttendance, updateAttendance } from "../controller/AttendanceController.js";
+import { attendanceReport,getAttendance,updateAttendance } from "../controller/attendanceController.js";
+//import { attendanceReport, getAttendance, updateAttendance } from "../controller/attendanceController.js";
 
 const router = express.Router();
 router.get('/',authMiddleware,defaultAttendance,getAttendance);
