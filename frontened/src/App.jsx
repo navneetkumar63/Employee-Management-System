@@ -5,33 +5,33 @@ import React from 'react'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom' 
 import { ToastContainer } from 'react-toastify';
 import Login from './pages/Login'
-import AdminDashboard from './pages/adminDashBoard'
-import EmployeeDashboard from './pages/employeeDashBoard'
+import AdminDashboard from './pages/AdminDashBoard.jsx'
+import EmployeeDashboard from './pages/EmployeeDashBoard.jsx'
 import 'react-toastify/dist/ReactToastify.css';
-import PrivateRoutes from './utils/PrivateRoutes';
-import RoleBasedRoutes from './utils/RoleBasedRoutes';
-import AdminSummary from './components/dashBoard/AdminSummary';
-import DepartmentList from './components/department/DepartmentList';
-import AddDepartment from './components/department/AddDepartment';
-import EditDepartment from './components/department/EditDepartment';
-import List from './components/employee/List';
-import Add from './components/employee/Add';
-import View from './components/employee/view';
-import Edit from './components/employee/Edit';
-import AddSalary from './components/salary/Add';
-import ViewSalary from './components/salary/View';
-import Summary from './components/EmployeeDashboard/Summary';
-import Profile from './components/EmployeeDashboard/Profile';
-import LeaveList from './components/Leave/List';
-import AddLeave from './components/Leave/Add'
-import Setting from './components/EmployeeDashboard/Setting';
-import Table from './components/Leave/Table';
-import Details from './components/Leave/Details';
-import AdminSetting from './components/adminSetting/Setting';
+import PrivateRoutes from './utils/PrivateRoutes.jsx';
+import RoleBasedRoutes from './utils/RoleBasedRoutes.jsx';
+import AdminSummary from './components/dashBoard/AdminSummary.jsx';
+import DepartmentList from './components/department/DepartmentList.jsx';
+import AddDepartment from './components/department/AddDepartment.jsx';
+import EditDepartment from './components/department/EditDepartment.jsx';
+import List from './components/employee/List.jsx';
+import Add from './components/employee/Add.jsx';
+import View from './components/employee/View.jsx';
+import Edit from './components/employee/Edit.jsx';
+import AddSalary from './components/salary/Add.jsx';
+import ViewSalary from './components/salary/View.jsx';
+import Summary from './components/EmployeeDashboard/Summary.jsx';
+import Profile from './components/EmployeeDashboard/Profile.jsx';
+import LeaveList from './components/Leave/List.jsx';
+import AddLeave from './components/Leave/Add.jsx'
+import Setting from './components/EmployeeDashboard/Setting.jsx';
+import Table from './components/Leave/Table.jsx';
+import Details from './components/Leave/Details.jsx';
+import AdminSetting from './components/adminSetting/Setting.jsx';
 //import LeaveDetails from './components/Leave/LeaveDetails';
 //import Attendance from './components/attendance/Attendance';
-import Attendance from './components/attendence/Attendance';
-import AttendanceReport from './components/attendence/AttendenceReport';
+import Attendance from './components/attendence/Attendance.jsx';
+import AttendanceReport from './components/attendence/AttendenceReport.jsx';
 
 
 const App = () => {

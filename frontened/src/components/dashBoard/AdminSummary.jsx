@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import SummaryCard from './SummaryCard'
+import SummaryCard from './SummaryCard.jsx'
 import { FaBuilding, FaCheckCircle, FaFileAlt, FaHourglassHalf, FaMoneyBillWave, FaTimesCircle, FaUsers } from 'react-icons/fa'
 import axios from 'axios';
 

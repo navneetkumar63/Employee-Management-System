@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { useAuth } from '../../context/authContext';
+import { useAuth } from '../../context/authContext.jsx';
 
 const View = () => {
   const { user } = useAuth(); // Auth se logged in user

@@ -2,7 +2,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaTachometerAlt, FaUser, FaBuilding, FaCalendarAlt, FaMoneyBillWave, FaCogs, FaRegCalendar } from 'react-icons/fa';
-import { useAuth } from '../../context/authContext';
+import { useAuth } from '../../context/authContext.jsx';
 
 const Sidebar = () => {
   const { auth, loading } = useAuth();

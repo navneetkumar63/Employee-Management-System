@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom'
-import { colummn, LeaveButton } from '../../utils/LeaveHelper';
+import { colummn, LeaveButton } from '../../utils/LeaveHelper.jsx';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 

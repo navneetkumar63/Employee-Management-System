@@ -4,8 +4,8 @@ import DataTable from 'react-data-table-component'
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
-import AddDepartment from './AddDepartment'
-import { columns, DepartmentButton } from '../../utils/DepartmentHelper'
+import AddDepartment from './AddDepartment.jsx';
+import { columns, DepartmentButton } from '../../utils/DepartmentHelper.jsx';
 const DepartmentList = () => {
   const[departments,setDepartments] = useState([])
   const [depLoading,setDepLoading] = useState(false)

@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { useAuth } from '../../context/authContext';
+import { useAuth } from '../../context/authContext.jsx';
 
 
 

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { FaUser } from 'react-icons/fa';
-import { useAuth } from '../../context/authContext';
+import { useAuth } from '../../context/authContext.jsx';
 
 const Summary = () => {
   const { auth, loading } = useAuth();

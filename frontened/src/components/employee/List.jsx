@@ -4,7 +4,7 @@ import DataTable from 'react-data-table-component';
 //import { columns } from '../../utils/EmployeeHelper';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { columns, EmployeeButtons } from '../../utils/EmployeeHelper';
+import { columns, EmployeeButtons } from '../../utils/EmployeeHelper.jsx';
 
 const List = () => {
   const [employees, setEmployees] = useState([]);

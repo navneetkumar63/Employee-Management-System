@@ -1,7 +1,7 @@
 import React from 'react'
-import Sidebar from '../components/EmployeeDashboard/Sidebar'
+import Sidebar from '../components/EmployeeDashboard/Sidebar.jsx'
 import { Outlet } from 'react-router-dom'
-import NavBar from '../components/dashBoard/NavBar'
+import NavBar from '../components/dashBoard/NavBar.jsx'
 
 
 const employeeDashBoard = () => {

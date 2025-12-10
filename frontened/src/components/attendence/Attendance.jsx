@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useAuth } from "../../context/authContext";
+import { useAuth } from "../../context/authContext.jsx";
 
 // Helper component for marking attendance
 const AttendanceHelper = ({ status, employeeId, refresh, isAdmin }) => {
