@@ -12,7 +12,7 @@ export const columns = [
 export const AttendanceHelper = ({ status, employeeId, refresh, isAdmin }) => {
   const markAttendance = async (status) => {
     await axios.put(
-      `http://localhost:5000/api/attendance/update/${employeeId}`,
+      `https://employee-management-system-q86i.onrender.com/api/attendance/update/${employeeId}`,
       { status },
       { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
     );

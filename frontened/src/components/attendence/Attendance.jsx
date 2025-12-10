@@ -10,7 +10,7 @@ const AttendanceHelper = ({ status, employeeId, refresh, isAdmin }) => {
   const markAttendance = async (status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/attendance/update/${employeeId}`,
+        `https://employee-management-system-q86i.onrender.com/api/attendance/update/${employeeId}`,
         { status },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
@@ -83,7 +83,7 @@ const Attendance = () => {
   const fetchAttendance = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/attendance", {
+      const res = await axios.get("https://employee-management-system-q86i.onrender.com/api/attendance", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
 

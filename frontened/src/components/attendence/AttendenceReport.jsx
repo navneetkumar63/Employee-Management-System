@@ -14,7 +14,7 @@ try {
   if(dateFilter){
     query.append('date',dateFilter)
   }
-  const response = await axios.get(  `http://localhost:5000/api/attendance/report?${query.toString()}`, {
+  const response = await axios.get(  `https://employee-management-system-q86i.onrender.com/api/attendance/report?${query.toString()}`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
@@ -120,7 +120,7 @@ const AttendanceReport = () => {
       if (dateFilter) query.append("date", dateFilter);
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/attendance/report?${query.toString()}`,
+        `https://employee-management-system-q86i.onrender.com/api/attendance/report?${query.toString()}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

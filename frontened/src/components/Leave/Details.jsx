@@ -10,7 +10,7 @@ const Details = () => {
    useEffect(() => {
         const fetchLeave = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/leave/detail/${id}`, {
+                const response = await axios.get(`https://employee-management-system-q86i.onrender.com/api/leave/detail/${id}`, {
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem('token')}`
                     }
@@ -31,7 +31,7 @@ const Details = () => {
 
     const changeStatus = async (id,status)=>{
            try {
-                const response = await axios.put(`http://localhost:5000/api/leave/${id}`,{status}, {
+                const response = await axios.put(`https://employee-management-system-q86i.onrender.com/api/leave/${id}`,{status}, {
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem('token')}`
                     }
@@ -60,7 +60,7 @@ const Details = () => {
     {/* Left Side - Image */}
     <div className="flex-shrink-0">
       <img  
-        src={`http://localhost:5000/${leave.employeeId.userId.profileImage}`} 
+        src={`https://employee-management-system-q86i.onrender.com/${leave.employeeId.userId.profileImage}`} 
         className="rounded-full border w-72 h-72 object-cover"
         alt="Employee"
       /> 

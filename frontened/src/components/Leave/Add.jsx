@@ -38,7 +38,7 @@ const Add = () => {
     if (!leave.userId) return toast.error("User not found. Please login again.");
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/leave/add`, leave, {
+      const response = await axios.post(`https://employee-management-system-q86i.onrender.com/api/leave/add`, leave, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
