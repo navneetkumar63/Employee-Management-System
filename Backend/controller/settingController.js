@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt';
 const changePassword = async (req,res) =>{
    try{
  const {userId, oldPassword,newPassword} = req.body;
-console.log(req.body);
+
      const user = await User.findById(userId)
      if(!user){
          return res.status(404).json({success:false, error: "User not founnd"})

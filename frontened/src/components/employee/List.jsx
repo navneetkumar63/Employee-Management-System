@@ -23,26 +23,12 @@ const List = () => {
         });
         
         if (response.data.success) {
-          console.log(response.data);
-         {/* let sno = 1;
-          const data = response.data.employees.map((emp) => ({
-            _id: emp._id,
-            sno: sno++,
-            dep_name: emp.department.dep_name,
-            name: emp.userId.name,
-            dob: new Date(emp.dob).toLocaleDateString(),
-            profileImage: emp.userId.profileImage,
-            action: <EmployeeButtons Id ={emp.id}/> ,
-          }));
-          */}
+          
+        
              let sno = 1;
           const data = response.data.employees.map((emp) => {
 
 
-   console.log("Processing employee:", emp);
-            
-            // Debug department structure
-            console.log("Department data:", emp.department);
             
             // Check if department exists and has the expected structure
             let departmentName = 'No Department';
@@ -84,7 +70,7 @@ const List = () => {
           setFilteredEmployee(data);
         }
       } catch (error) {
-        console.error("Error fetching employees:", error);
+      
         toast.error("Failed to fetch employees!");
       } finally {
         setEmpLoading(false);

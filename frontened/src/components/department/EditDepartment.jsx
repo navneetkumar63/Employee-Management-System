@@ -47,7 +47,7 @@ const EditDepartment = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            console.log(name, description);
+           
             const response = await axios.put(`http://localhost:5000/api/department/${id}`,
                 { name, description },
                 {
@@ -55,11 +55,9 @@ const EditDepartment = () => {
                         "Authorization": `Bearer ${localStorage.getItem('token')}`
                     }
                 })
-        {/*    console.log("Data is saved");
-            toast.success("Department is Added");
-            navigate("/admin-dashboard/departments"); */}
+      
              if(response.data.success){
-        console.log("data is saved");
+        
         toast.success("Department is Updated");
         navigate("/admin-dashboard/departments");
       }  

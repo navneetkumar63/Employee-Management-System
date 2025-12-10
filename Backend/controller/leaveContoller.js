@@ -7,9 +7,9 @@ const addLeave = async (req,res)=>{
 try{
    
 const {userId, leaveType, startDate, endDate, reason } = req.body;
-console.log(userId)
+
 const employee = await Employee.findOne({userId});
-console.log(employee);
+
 
 const newLeave= new Leave({
   employeeId: employee._id, leaveType, startDate, endDate, reason
@@ -27,71 +27,7 @@ res.status(500).json({success: false, err: "Leave added server err"})
 
 
 
-{/*
 
-const addLeave = async (req, res) => {
-  try {
-    const { userId, leaveType, startDate, endDate, reason } = req.body;
-
-    if (!userId || !leaveType || !startDate || !endDate) {
-      return res.status(400).json({ success: false, message: "All required fields are required." });
-    }
-
-    if (!mongoose.Types.ObjectId.isValid(userId)) {
-      return res.status(400).json({ success: false, message: "Invalid userId." });
-    }
-
-    // Convert string to ObjectId
-    const userObjectId = new mongoose.Types.ObjectId(userId);
-
-    // Find employee using ObjectId
-    const employee = await Employee.findOne({ userId: userObjectId });
-
-    if (!employee) {
-      return res.status(404).json({ success: false, message: "Employee not found. Make sure an Employee record exists for this user." });
-    }
-
-    const newLeave = new Leave({
-      employeeId: employee._id,
-      leaveType,
-      startDate,
-      endDate,
-      reason: reason || "",
-    });
-
-    await newLeave.save();
-
-    return res.status(200).json({ success: true, message: "Leave request submitted.", leave: newLeave });
-  } catch (err) {
-    console.error("Add Leave Error:", err.message);
-    return res.status(500).json({ success: false, message: "Server error. Please try again later." });
-  }
-};
-*/}
-
-
-
-
-
-{/*
-const getLeave = async(req,res)=>{
-      try{
-        const{id} = req.params;
-        let leaves = await Leave.find({employeeId : id})
-        if(!leaves){
-             const employee = await Employee.findOne({userId: id})
-             leaves = await Leave.find({employeeId: employee._id})
-        }
-         
-          return res.status(200).json({success:true, leaves})
-
-      }
-     catch(err){
-    console.log(err.message);
-res.status(500).json({success: false, err: "Leave added server err"})
-}
-}
-*/}
  
 const getLeave = async (req, res) => {
   try {

@@ -1,68 +1,4 @@
-{/*import React from 'react'
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom' 
-import { ToastContainer } from 'react-toastify';
-import Login from './pages/Login'
-import AdminDashboard from './pages/adminDashBoard'
-import EmployeeDashboard from './pages/employeeDashBoard'
-import 'react-toastify/dist/ReactToastify.css';
-import PrivateRoutes from './utils/PrivateRoutes';
-import RoleBasedRoutes from './utils/RoleBasedRoutes';
-import AdminSummary from './components/dashBoard/AdminSummary';
-import DepartmentList from './components/department/DepartmentList';
-import AddDepartment from './components/department/AddDepartment';
-import EditDepartment from './components/department/EditDepartment';
-import List from './components/employee/List';
-import Add from './components/employee/Add';
-import View from './components/employee/view';
-import Edit from './components/employee/Edit';
-import AddSalary from './components/salary/Add';
-import ViewSalary from './components/salary/View';
 
-
-const App = () => {
-  return (
-    <BrowserRouter>
-      <ToastContainer/>
-      <Routes>
-        <Route path='/' element={<Navigate to="/admin-dashboard" />} />
-        <Route path='/login' element={<Login />} />
-
-        {/* Admin Dashboard with nested routes */} 
-      /*  <Route 
-          path='/admin-dashboard' 
-          element={
-            <PrivateRoutes>
-              <RoleBasedRoutes requiredRole={['admin']}>
-                <AdminDashboard/>
-              </RoleBasedRoutes>
-            </PrivateRoutes>
-          }
-        >
-          <Route index element={<AdminSummary />} />
-          <Route path="departments" element={<DepartmentList />} />
-           <Route path="add-department" element={<AddDepartment />} />
-            <Route path="department/:id" element={<EditDepartment />} />
-
-            <Route path="employees" element={<List/>} />
-              <Route path="add-employee" element={<Add/>} />
-               <Route path="employees/:id" element={<View/>} />
-                <Route path="employees/edit/:id" element={<Edit/>} />
-
-                      <Route path="salary/add" element={<AddSalary/>} />
-                       <Route path="employees/salary/:id" element={<ViewSalary/>} />
-
-        </Route>
-
-        {/* Employee Dashboard */
-     {/*  <Route path='/employee-dashboard' element={<EmployeeDashboard />} />  
-      </Routes>
-    </BrowserRouter>
-  )
-}
-
-export default App
-
-*/}
 
 
 import React from 'react'
@@ -162,6 +98,7 @@ const App = () => {
  <Route path="add-leave" element={<AddLeave/>} />
 
  <Route path="salary/:id" element={<ViewSalary/>} />
+   <Route path="attendance/:id" element={<Attendance />} /> 
 
  <Route path="setting" element={<Setting/>} />
  

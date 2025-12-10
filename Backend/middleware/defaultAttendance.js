@@ -1,26 +1,25 @@
-import Attendance from "../models/Attendance.js"
-import Employee from "../models/Employee.js"
+// middleware/defaultAttendance.js
+import Attendance from "../models/Attendance.js";
+import Employee from "../models/Employee.js";
 
- export const defaultAttendance=async(req,res,next)=>
-{
-    try {
-        const date=new Date().toISOString().split('T')[0]
-        const existingAttendance=await Attendance.findOne({date})
-        if(!existingAttendance){
-            const employees=await Employee.find({})
-            const attendance=employees.map(employee=>({
-                date,
-                employeeId:employee._id,
-                status:null
-            }))
-            await Attendance.insertMany(attendance)
-        }
-        next();
+export const defaultAttendance = async (req, res, next) => {
+  try {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-    } catch (error) {
-        return res.status(500).json({
-            success:false,
-            error:error
-        })
+    const employees = await Employee.find();
+
+    for (const emp of employees) {
+      const exists = await Attendance.findOne({ employeeId: emp._id, date: today });
+      if (!exists) {
+        await Attendance.create({ employeeId: emp._id, date: today });
+      }
     }
-}
+
+    next();
+  } catch (err) {
+    console.error("Default Attendance error:", err);
+    next(err);
+  }
+};
+

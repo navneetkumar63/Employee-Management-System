@@ -14,7 +14,7 @@ const navigate = useNavigate();
 const handleSubmit = async (e)=>{
 e.preventDefault();
 try{
-    console.log(name,description);
+ 
      const response = await axios.post('http://localhost:5000/api/department/add', 
          { name, description },
          {
@@ -25,11 +25,7 @@ try{
  console.log("Data is saved");
   toast.success("Department is Added");
     navigate("/admin-dashboard/departments");
-    {/* if(response.data.success){
-        console.log("data is saved");
-        toast.success("Department is Added");
-        navigate("/admin-dashboard/departments");
-      }  */}
+   
 
      
 }

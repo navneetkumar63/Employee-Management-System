@@ -44,10 +44,6 @@ export const colummn =[
 
 ];
 
-
-
-
-
 export const LeaveButton =({Id}) =>{
     const naviagte = useNavigate();
 

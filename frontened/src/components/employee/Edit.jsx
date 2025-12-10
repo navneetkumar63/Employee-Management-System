@@ -80,7 +80,7 @@ const Edit = () => {
                 navigate('/admin-dashboard/employees');
             }
         } catch (error) {
-            console.log(error);
+           
             if (error.response && error.response.data && error.response.data.error) {
                 toast.error(error.response.data.error);
             } else {

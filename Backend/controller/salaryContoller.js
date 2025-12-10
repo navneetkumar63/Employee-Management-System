@@ -24,77 +24,14 @@ catch(err){
 res.status(500).json({success: false, err: "salary added server err"})
 }
 }
-{/*
-const getSalary = async (req, res) => {
-    try {
-        const { id } = req.params;
-        let salary
-         salary = await Salary.find({ employeeId: id })
-            .populate('employeeId', 'employeeId name firstName lastName');
-            if(!salary || salary.length < 1){
-        const employee = await Employee.findOne({userId: id})
-          salary = await Salary.find({employeeId: employee._id}).populate('employeeId', 'employeeId name firstName lastName');
-         console.log(salary)   
-        }
-        
-        return res.status(200).json({ 
-            success: true, 
-            salary // ✅ Frontend mein 'salary' property access karen
-        });
-    } catch (err) {
-        console.error("Salary fetch error:", err);
-        res.status(500).json({ 
-            success: false, 
-            error: "Server error while fetching salary data" 
-        });
-    }
-}
-*/}
-{/*
-const getSalary = async (req, res) => {
-    try {
-        const { id } = req.params;
-        let salary;
 
-        // First try: directly with employeeId
-        salary = await Salary.find({ employeeId: id })
-            .populate('employeeId', 'employeeId name firstName lastName');
-
-        // If not found, check with userId
-        if (!salary || salary.length < 1) {
-            const employee = await Employee.findOne({ userId: id });
-
-            if (!employee) {
-                return res.status(404).json({
-                    success: false,
-                    error: "Employee not found"
-                });
-            }
-
-            salary = await Salary.find({ employeeId: employee._id })
-                .populate('employeeId', 'employeeId name firstName lastName');
-        }
-
-        return res.status(200).json({ 
-            success: true, 
-            salary 
-        });
-    } catch (err) {
-        console.error("Salary fetch error:", err);
-        res.status(500).json({ 
-            success: false, 
-            error: "Server error while fetching salary data" 
-        });
-    }
-};
-  */}
 
 const getSalary = async (req, res) => {
   try {
     const { id } = req.params;
     let salary;
 
-    console.log("👉 Incoming ID from frontend:", id);
+    
 
     // Step 1: Try salary with employeeId directly
     salary = await Salary.find({ employeeId: id })
@@ -120,7 +57,7 @@ const getSalary = async (req, res) => {
             // Fix employee.userId
             employee.userId = user._id;
             await employee.save();
-            console.log("✅ Employee link auto-fixed:", employee);
+           
           }
         }
       }

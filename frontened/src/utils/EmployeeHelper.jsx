@@ -78,7 +78,7 @@ export const getEmployees = async (id) => {
         "Authorization": `Bearer ${localStorage.getItem("token")}`,
       },
     });
-console.log(response.data)
+
     if (response.data.success) {
      // employees = response.data.departments;
       return response.data.employees;
@@ -91,7 +91,7 @@ console.log(response.data)
     toast.error(error.message || "Something went wrong");
     return [];
   }
-  //return employees;
+ 
 };
 
  export const EmployeeButtons =  ({Id}) =>{

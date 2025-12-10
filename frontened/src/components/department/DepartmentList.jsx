@@ -19,7 +19,7 @@ try{
     "Authorization": `Bearer ${localStorage.getItem('token')}`
   }
 })
- console.log("Departments from API:", response.data.departments);
+ 
 if(response.data.success){
       let sno = 1 ;
   const data = await response.data.departments.map((dep)=>(
@@ -35,7 +35,7 @@ if(response.data.success){
     }
   
   ));
-   console.log("Mapped Data for Table:", data); 
+  
   setDepartments(data);
   setFilteredDepartments(data)
     }

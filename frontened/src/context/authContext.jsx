@@ -1,68 +1,52 @@
+import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
-import { useEffect } from "react";
-import { createContext, useState, useContext } from "react";
-//import { data } from "react-router-dom";
 import { toast } from "react-toastify";
 
-
-
-// create context
 const AuthContext = createContext();
 
-// provider component
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [ loading, setLoading] = useState(true);
- 
+  const [auth, setAuth] = useState({ user: null, token: null });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-const verifyUser = async () => { 
-  
-   try{
-    const token = localStorage.getItem("token");
-    if(token){
-       const response =  await axios.get("http://localhost:5000/api/auth/verify", {
-       headers:{
-        "Authorization" :`Bearer ${token}`}
-       })
-       console.log(response);
-       if(response.data.success){
-        setUser(response.data.user);
-}
-   }
-   else{
-    setUser(null);
-    setLoading(false);
-   }
-       }
-    catch(error){
-      console.log(error);
-        toast.error(data.message) 
-        setUser(null);
-    } finally{
+    const verifyUser = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          setAuth({ user: null, token: null });
+          return;
+        }
+
+        const response = await axios.get("http://localhost:5000/api/auth/verify", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        if (response.data.success) {
+          setAuth({ user: response.data.user, token });
+        } else {
+          setAuth({ user: null, token: null });
+        }
+      } catch (err) {
+        setAuth({ user: null, token: null });
+      } finally {
         setLoading(false);
-    }
-}
-verifyUser();
+      }
+    };
+
+    verifyUser();
   }, []);
 
-  const login = (userData) => {
-    setUser(userData);
-   
+  const login = (userData, token) => {
+    setAuth({ user: userData, token });
+    localStorage.setItem("token", token);
   };
 
   const logout = () => {
-    setUser(null);
+    setAuth({ user: null, token: null });
     localStorage.removeItem("token");
   };
 
-  return (
-    <AuthContext.Provider value={{ user, login, logout, loading   }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ auth, login, logout, loading }}>{children}</AuthContext.Provider>;
 };
 
-// custom hook
 export const useAuth = () => useContext(AuthContext);
-

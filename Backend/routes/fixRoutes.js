@@ -9,7 +9,7 @@ router.post("/fix-employee-link", async (req, res) => {
   try {
     const { userId } = req.body;
 
-    console.log("🔍 Incoming userId:", userId);
+   
 
     // Check if user exists
     const user = await User.findById(userId);
@@ -30,7 +30,7 @@ router.post("/fix-employee-link", async (req, res) => {
         // Update employee.userId to correct user._id
         employee.userId = user._id;
         await employee.save();
-        console.log("✅ Employee link fixed:", employee);
+       
       } else {
         return res.status(404).json({ success: false, message: "❌ Employee record not found for this user" });
       }

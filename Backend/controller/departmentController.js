@@ -14,12 +14,12 @@ import Department from "../models/Department.js";
 
  const createDepartment = async (req, res) => {
   try {
-    console.log(req.body)
+   
     const newDepartment = new Department({
      name: req.body.name, 
       description: req.body.description,
     });
-    console.log(newDepartment);
+   
 
     const savedDepartment = await newDepartment.save();
     res.status(201).json(savedDepartment);
